@@ -23,7 +23,7 @@ server.get("/api/users", authorize, (req, res) => {
 
 server.post("/api/register", (req, res) => {
   let user = req.body;
-  console.log(Users.add());
+
   if (!user.username || !user.password) {
     res.status(500).json({ message: "Please include username and password" });
   }
@@ -42,6 +42,7 @@ server.post("/api/register", (req, res) => {
 
 server.post("/api/login", (req, res) => {
   let { username, password } = req.body;
+  console.log(req.body);
 
   Users.findBy({ username })
     .first()
