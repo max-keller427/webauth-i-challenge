@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const bcrypt = require("bcryptjs");
+const db = require('../data/knexConfig.js')
 
 const Users = require("../users/users-model.js");
 const restricted = require("../auth/restricted-middleware.js");
